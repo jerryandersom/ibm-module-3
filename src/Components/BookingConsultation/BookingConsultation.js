@@ -4,7 +4,7 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import FindDoctorSearch from '../FindDoctorSearch/FindDoctorSearch';
 import DoctorCard from '../DoctorCard/DoctorCard';
 
-const InstantConsultation = () => {
+const BookingConsultation = () => {
     const [searchParams] = useSearchParams();
     const [doctors, setDoctors] = useState([]);
     const [filteredDoctors, setFilteredDoctors] = useState([]);
@@ -82,4 +82,4 @@ const InstantConsultation = () => {
     )
 }
 
-export default InstantConsultation
+export default BookingConsultation
