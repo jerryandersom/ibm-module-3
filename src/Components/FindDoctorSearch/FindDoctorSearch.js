@@ -37,6 +37,7 @@ const FindDoctorSearch = () => {
                                     <span>{speciality}</span>
                                     <span>SPECIALITY</span>
                                 </div>)
+                                
                             }
                         </div>
                     </div>
