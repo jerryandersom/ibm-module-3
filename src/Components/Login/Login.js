@@ -71,9 +71,9 @@ const Login = () => {
           <div className="login-form">
             <form onSubmit={login}>
               <div className="form-group">
-                <label htmlFor="email">Email</label>
-                {/* Input field for email with value and onChange event */}
-                <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" name="email" id="email" className="form-control" placeholder="Enter your email" aria-describedby="helpId" />
+                    <label htmlFor="email">Email</label>
+                    {/* Input field for email with value and onChange event */}
+                     <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" name="email" id="email" className="form-control" placeholder="Enter your email" aria-describedby="helpId" />
               </div>
               {/* Input field for password - Add logic here for password input box */}
               <div className="form-group">
@@ -88,7 +88,7 @@ const Login = () => {
                  placeholder="Enter your password"
                  aria-describedby="helpId"
                />
- </div>
+                </div>
               <div className="btn-group">
                 <button type="submit" className="btn btn-primary mb-2 mr-1 waves-effect waves-light">Login</button>
               </div>
