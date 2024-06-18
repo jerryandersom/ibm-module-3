@@ -21,12 +21,27 @@ const AppointmentForm = ({ doctorName, doctorSpeciality, onSubmit }) => {
 
     const handleFormSubmit = (e) => {
       e.preventDefault();
-      onSubmit({ name, phoneNumber, selectedDate, selectedTime });
+      const appointmentData = {
+        doctorName,
+        doctorSpeciality,
+        patientName: name,
+        phoneNumber,
+        date: selectedDate,
+        time: selectedTime,
+      };
+      localStorage.setItem('appointmentData', JSON.stringify(appointmentData));
+      onSubmit(appointmentData);
       setName('');
       setPhoneNumber('');
       setSelectedDate(null);
       setSelectedTime(null);
     };
+
+    const timeSlots = Array.from({ length: 8 }, (_, i) => {
+      const hour = (i + 3) % 12 || 12;
+      const period = (i + 3) >= 12 ? 'PM' : 'AM';
+      return `${hour} ${period}`;
+    });
 
     return (
       <form onSubmit={handleFormSubmit} className="appointment-form">
@@ -64,7 +79,11 @@ const AppointmentForm = ({ doctorName, doctorSpeciality, onSubmit }) => {
           <label htmlFor="time">Time Slot:</label>
           <select id="time" value={selectedTime} onChange={(e) => handleTimeChange(e.target.value)} required>
             <option value="">Select a time slot</option>
-            {/* Add your time slot options here */}
+            {timeSlots.map((time, index) => (
+              <option key={index} value={time}>
+                {time}
+              </option>
+            ))}
           </select>
         </div>
         <button type="submit">Book Now</button>
