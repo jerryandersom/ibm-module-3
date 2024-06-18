@@ -26,7 +26,6 @@ const Sign_Up = () => {
                 email: email,
                 password: password,
                 phone: phone,
-
             }),
         });
 
@@ -53,34 +52,39 @@ const Sign_Up = () => {
     };
 
     return (
-        <div className="container" style={{marginTop:'5%'}}>
-        <div className="signup-grid">
-        <div className="signup-form">
-         <form method="POST" onSubmit={register}>
-           <div className="form-group">
-                <label htmlFor="email">Email</label>
-                 <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" name="email" id="email" className="form-control" placeholder="Enter your email" aria-describedby="helpId" />
-                 {showerr && <div className="err" style={{ color: 'red' }}>{showerr}</div>}
+        <div className="container" style={{ marginTop: '5%' }}>
+            <div className="signup-grid">
+                <div className="signup-text">
+                    <h1>Sign Up</h1>
+                </div>
+                <div className="signup-text1" style={{ textAlign: 'left' }}>
+                    Already a member? <span><Link to="/login" style={{ color: '#2190FF' }}>Login</Link></span>
+                </div>
+                <div className="signup-form">
+                    <form method="POST" onSubmit={register}>
+                        <div className="form-group">
+                            <label htmlFor="email">Email</label>
+                            <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" name="email" id="email" className="form-control" placeholder="Enter your email" aria-describedby="helpId" />
+                            {showerr && <div className="err" style={{ color: 'red' }}>{showerr}</div>}
                         </div>
 
-<div className="form-group">
-           <label htmlFor="name">Name</label>
-           <input value={name} type="text" onChange={(e) => setName(e.target.value)} name="name" id="name" className="form-control" placeholder="Enter your name" aria-describedby="helpId" />
-       </div>
-       <div className="form-group">
-           <label htmlFor="phone">Phone</label>
-           <input value={phone} onChange={(e) => setPhone(e.target.value)} type="tel" name="phone" id="phone" className="form-control" placeholder="Enter your phone number" aria-describedby="helpId" />
-       </div>
-       <div className="form-group">
-           <label htmlFor="password">Password</label>
-           <input value={password} onChange={(e) => setPassword(e.target.value)} name="password" id="password" className="form-control" placeholder="Enter your password" aria-describedby="helpId" />
-
-       </div>
-         </form>
-         </div>
-         </div>
-         </div>
- //Sign up role is not stored in database. You can apply logic for this according to your react code.
+                        <div className="form-group">
+                            <label htmlFor="name">Name</label>
+                            <input value={name} type="text" onChange={(e) => setName(e.target.value)} name="name" id="name" className="form-control" placeholder="Enter your name" aria-describedby="helpId" />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="phone">Phone</label>
+                            <input value={phone} onChange={(e) => setPhone(e.target.value)} type="tel" name="phone" id="phone" className="form-control" placeholder="Enter your phone number" aria-describedby="helpId" />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="password">Password</label>
+                            <input value={password} onChange={(e) => setPassword(e.target.value)} name="password" id="password" className="form-control" placeholder="Enter your password" aria-describedby="helpId" />
+                        </div>
+                        <button type="submit" className="btn1">Sign Up</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     );
 }
 
