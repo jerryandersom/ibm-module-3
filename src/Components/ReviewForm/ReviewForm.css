@@ -1,4 +1,4 @@
-body {
+.ReviewFormContainer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -63,4 +63,51 @@ body {
 
 .ReviewForm .submitted-message {
   margin-top: 20px;
+}
+.stars {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
+.stars input[type="radio"] {
+    display: none;
+}
+
+.stars label {
+    font-size: 2rem;
+    color: #ddd;
+    cursor: pointer;
+    background-color: white;
+    /* border: 1px solid #ccc; */
+    margin: 0 0.1rem;
+    padding: 0.1rem;
+    border-radius: 0.2rem;
+}
+
+.stars label:hover,
+.stars label:hover ~ label,
+.stars input[type="radio"]:checked ~ label {
+    color: gold;
+    border-color: gold;
+}
+
+.submitted-message {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.submitted-message h3 {
+  margin-top: 0;
+}
+
+.submitted-message p {
+  margin-bottom: 10px;
+}
+
+.submitted-message p:last-child {
+  margin-bottom: 0;
 }

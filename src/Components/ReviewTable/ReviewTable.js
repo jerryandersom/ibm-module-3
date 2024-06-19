@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './ReviewTable.css';
 
 const ReviewForm = () => {
   const [reviews, setReviews] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const appointmentData = JSON.parse(localStorage.getItem('appointmentData'));
@@ -16,6 +18,10 @@ const ReviewForm = () => {
       ]);
     }
   }, []);
+
+  const handleButtonClick = () => {
+    navigate('/review-form');
+  };
 
   return (
     <div className="review-form">
@@ -33,7 +39,7 @@ const ReviewForm = () => {
           <div>{review.doctorName}</div>
           <div>{review.doctorSpeciality}</div>
           <div>
-            <button className="feedback-button">Click Here</button>
+            <button className="feedback-button" onClick={handleButtonClick}>Click Here</button>
           </div>
           <div>
           </div>
