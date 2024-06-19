@@ -1,0 +1,66 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.ReviewForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%; /* increased width to 80% of the screen */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #ddd;
+  max-width: 1000px; /* set a maximum width to prevent the form from becoming too wide */
+}
+
+.ReviewForm h2 {
+  margin-bottom: 20px;
+}
+
+.ReviewForm label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.ReviewForm input,
+.ReviewForm textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+.ReviewForm textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+.ReviewForm button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.ReviewForm button:hover {
+  background-color: #45a049;
+}
+
+.ReviewForm .warning {
+  color: red;
+  margin-bottom: 10px;
+}
+
+.ReviewForm .submitted-message {
+  margin-top: 20px;
+}

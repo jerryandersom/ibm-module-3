@@ -7,21 +7,25 @@ import Login from './Components/Login/Login'; // Adjust the path if necessary
 import InstantConsultation from './Components/InstantConsultation/InstantConsultation';  
 import BookingConsultation from './Components/BookingConsultation/BookingConsultation';  
 import Notification from './Components/Notification/Notification';
+import ReviewTable from './Components/ReviewTable/ReviewTable'; // Adjust the path if necessary
+import ReviewForm from './Components/ReviewForm/ReviewForm'; // Adjust the path if necessary
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-      <Notification>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Landing_Page />} />
-          <Route path="/sign-up" element={<SignUp />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/instant-consultation" element={<InstantConsultation />} />
-          <Route path="/search/doctors" element={<BookingConsultation />} />
-        </Routes>
-      </Notification>
+        <Notification>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Landing_Page />} />
+            <Route path="/sign-up" element={<SignUp />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/instant-consultation" element={<InstantConsultation />} />
+            <Route path="/search/doctors" element={<BookingConsultation />} />
+            <Route path="/review-table" element={<ReviewTable />} />
+            <Route path="/review-form" element={<ReviewForm />} /> {/* Corrected path */}
+          </Routes>
+        </Notification>
       </BrowserRouter>
     </div>
   );
