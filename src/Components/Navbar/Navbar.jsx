@@ -28,18 +28,12 @@ const Navbar = () => {
         window.location.reload();
     }
 
-    const handleDropdown = () => {
-        setShowDropdown(!showDropdown);
-    }
-
     useEffect(() => {
         const storedemail = sessionStorage.getItem("email");
         if (storedemail) {
             setIsLoggedIn(true);
             const extractedUsername = storedemail.split("@")[0];
             setUsername(extractedUsername);
-
-            // setUsername(storedemail);
         }
     }, []);
 
@@ -70,8 +64,19 @@ const Navbar = () => {
                         <li className="link">
                             <Link to="/review-table">Reviews</Link>
                         </li>
-                        <li className="link">
+                        <li 
+                            className="link welcome-user" 
+                            onMouseEnter={() => setShowDropdown(true)} 
+                            onMouseLeave={() => setShowDropdown(false)}
+                        >
                             <span className="username">Welcome, {username}</span>
+                            {showDropdown && (
+                                <div className="dropdown-card">
+                                    <Link to="/profile">
+                                        <button className="btn-profile">Your Profile</button>
+                                    </Link>
+                                </div>
+                            )}
                         </li>
                         <li className="link">
                             <button className="btn2" onClick={handleLogout}>
