@@ -9,6 +9,7 @@ import BookingConsultation from './Components/BookingConsultation/BookingConsult
 import Notification from './Components/Notification/Notification';
 import ReviewTable from './Components/ReviewTable/ReviewTable'; // Adjust the path if necessary
 import ReviewForm from './Components/ReviewForm/ReviewForm'; // Adjust the path if necessary
+import ProfileCard from './Components/ProfileCard/ProfileCard'
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path="/search/doctors" element={<BookingConsultation />} />
             <Route path="/review-table" element={<ReviewTable />} />
             <Route path="/review-form" element={<ReviewForm />} /> {/* Corrected path */}
+            <Route path="/profile" element={<ProfileCard />} /> {/* Corrected path */}
           </Routes>
         </Notification>
       </BrowserRouter>
