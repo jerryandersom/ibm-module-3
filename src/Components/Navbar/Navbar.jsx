@@ -6,7 +6,6 @@ const Navbar = () => {
     const [click, setClick] = useState(false);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [username, setUsername] = useState("");
-    const [email, setEmail] = useState("");
     const [showDropdown, setShowDropdown] = useState(false);
 
     const handleClick = () => setClick(!click);
@@ -24,15 +23,15 @@ const Navbar = () => {
                 localStorage.removeItem(key);
             }
         }
-        setEmail('');
+        setUsername('');
         window.location.reload();
     }
 
     useEffect(() => {
-        const storedemail = sessionStorage.getItem("email");
-        if (storedemail) {
+        const storedEmail = sessionStorage.getItem("email");
+        if (storedEmail) {
             setIsLoggedIn(true);
-            const extractedUsername = storedemail.split("@")[0];
+            const extractedUsername = storedEmail.split("@")[0];
             setUsername(extractedUsername);
         }
     }, []);
@@ -64,19 +63,16 @@ const Navbar = () => {
                         <li className="link">
                             <Link to="/review-table">Reviews</Link>
                         </li>
-                        <li 
-                            className="link welcome-user" 
-                            onMouseEnter={() => setShowDropdown(true)} 
-                            onMouseLeave={() => setShowDropdown(false)}
-                        >
-                            <span className="username">Welcome, {username}</span>
-                            {showDropdown && (
-                                <div className="dropdown-card">
-                                    <Link to="/profile">
-                                        <button className="btn-profile">Your Profile</button>
-                                    </Link>
-                                </div>
-                            )}
+                        <li className="link welcome-user">
+                            <span>Welcome, {username}</span>
+                            <div className="dropdown-card">
+                                <Link to="/profile">
+                                    <button className="btn-profile">Your Profile</button>
+                                </Link>
+                                <Link to="/reports">
+                                    <button className="btn-profile">Your Reports</button>
+                                </Link>
+                            </div>
                         </li>
                         <li className="link">
                             <button className="btn2" onClick={handleLogout}>

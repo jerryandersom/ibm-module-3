@@ -9,7 +9,8 @@ import BookingConsultation from './Components/BookingConsultation/BookingConsult
 import Notification from './Components/Notification/Notification';
 import ReviewTable from './Components/ReviewTable/ReviewTable'; // Adjust the path if necessary
 import ReviewForm from './Components/ReviewForm/ReviewForm'; // Adjust the path if necessary
-import ProfileCard from './Components/ProfileCard/ProfileCard'
+import ProfileCard from './Components/ProfileCard/ProfileCard';
+import Reports from "./Components/ReportsLayout/ReportsLayout";
 
 function App() {
   return (
@@ -26,6 +27,8 @@ function App() {
             <Route path="/review-table" element={<ReviewTable />} />
             <Route path="/review-form" element={<ReviewForm />} /> {/* Corrected path */}
             <Route path="/profile" element={<ProfileCard />} /> {/* Corrected path */}
+            <Route path="/reports" element={<Reports />} /> {/* Corrected path */}
+            
           </Routes>
         </Notification>
       </BrowserRouter>
